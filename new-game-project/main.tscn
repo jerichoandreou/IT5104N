@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[node name="Node2D" type="Node2D" unique_id=748811869]
+
+[node name="Label" type="Label" parent="." unique_id=1666866567]
+offset_left = 473.0
+offset_top = 282.0
+offset_right = 744.0
+offset_bottom = 419.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "Hello World
+"
+horizontal_alignment = 1
+vertical_alignment = 1
