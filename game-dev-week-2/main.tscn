@@ -1,27 +1,34 @@
 [gd_scene format=3 uid="uid://d1ul7qubf72il"]
 
 [ext_resource type="Script" uid="uid://nhrvviv17oul" path="res://player.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://46owlm6ta2p7" path="res://assets/tungtungtungsahur.png" id="2_0xm2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(498.75, 37)
+size = Vector2(893.375, 119.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dm0k"]
-size = Vector2(42.5, 45.5)
+size = Vector2(39, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(904, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(163, 42)
 
 [node name="Main" type="Node2D" unique_id=461184358]
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1167882697]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=446239470]
-position = Vector2(585.625, 434.5)
+position = Vector2(520.3125, 467.25)
 shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="ColorRect" type="ColorRect" parent="Ground" unique_id=976290815]
 custom_minimum_size = Vector2(500, 30)
-offset_left = 337.0
-offset_top = 416.0
-offset_right = 837.0
-offset_bottom = 456.0
+offset_left = 73.0
+offset_top = 405.0
+offset_right = 971.0
+offset_bottom = 530.0
 color = Color(0, 0.29235992, 0, 1)
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=970029009]
@@ -29,13 +36,38 @@ position = Vector2(-5, -56)
 script = ExtResource("1_ig7tw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=797062786]
-position = Vector2(363, 447)
+position = Vector2(126.5, 431)
 shape = SubResource("RectangleShape2D_7dm0k")
 
-[node name="PlayerSprite" type="ColorRect" parent="Player" unique_id=511827454]
-custom_minimum_size = Vector2(0, 10)
-offset_left = 342.0
-offset_top = 428.0
-offset_right = 382.0
-offset_bottom = 468.0
-color = Color(0.69411767, 0, 0, 1)
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=686553926]
+position = Vector2(127, 431.90134)
+scale = Vector2(0.090624996, 0.08422083)
+texture = ExtResource("2_0xm2m")
+
+[node name="Roof" type="StaticBody2D" parent="." unique_id=1304612289]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Roof" unique_id=1945769945]
+position = Vector2(527, 212)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="ColorRect" type="ColorRect" parent="Roof" unique_id=737837157]
+offset_left = 73.0
+offset_top = 178.0
+offset_right = 982.0
+offset_bottom = 237.0
+color = Color(0.069180146, 0.30971065, 0.092612185, 1)
+
+[node name="Obstacle" type="StaticBody2D" parent="." unique_id=1099163234]
+position = Vector2(324, 371)
+constant_linear_velocity = Vector2(50, 1000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle" unique_id=1027202953]
+position = Vector2(2.5, 13)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="ColorRect" type="ColorRect" parent="Obstacle" unique_id=1259249086]
+offset_left = -78.0
+offset_top = -10.0
+offset_right = 85.0
+offset_bottom = 34.0
+color = Color(0.47672814, 0, 0.080293365, 1)
