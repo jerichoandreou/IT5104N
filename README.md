@@ -10,3 +10,7 @@ Screenshot 2: Running the program with it displaying the project
 Week 2: Activity 1 
 Screenshot 1: Playing and testing the project:
 <img width="1901" height="1189" alt="image" src="https://github.com/user-attachments/assets/e5a64c7f-5e02-4405-84bf-35ab95ac3337" />
+
+========================================================================================================================================================================================
+Week 2: Activity 2
+Screenshot 1:
