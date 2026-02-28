@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cwfj5qu5abpp"]
+
+[ext_resource type="Script" uid="uid://buktuid4f3du4" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://bf76mbn6idv4t" path="res://player.gd" id="2_e2o6t"]
+[ext_resource type="AudioStream" uid="uid://1eq3iks70nss" path="res://jumpsoundeffect.mp3" id="3_feb5d"]
+[ext_resource type="AudioStream" uid="uid://dgukhdcrprx3a" path="res://walkingsound.mp3" id="4_fc0e3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_80nbo"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fc0e3"]
+
+[node name="Game" type="Node2D" unique_id=715040260]
+script = ExtResource("1_e2o6t")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=16894075]
+script = ExtResource("2_e2o6t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1246368571]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1958693647]
+position = Vector2(351, 276)
+shape = SubResource("CircleShape2D_80nbo")
+
+[node name="JumpSFX" type="AudioStreamPlayer2D" parent="Player" unique_id=1368563734]
+stream = ExtResource("3_feb5d")
+bus = &"SFX"
+
+[node name="WalkSFX" type="AudioStreamPlayer2D" parent="Player" unique_id=1835643851]
+stream = ExtResource("4_fc0e3")
+bus = &"SFX"
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1330931338]
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1280561901]
+offset_right = 181.0
+offset_bottom = 42.0
+
+[node name="HealthBar" type="TextureProgressBar" parent="HUD" unique_id=1637743785]
+anchors_preset = -1
+anchor_right = 0.223
+anchor_bottom = 0.127
+offset_left = 795.0
+offset_top = 4.0
+offset_right = 898.104
+offset_bottom = -0.29600525
+value = 100.0
+texture_under = SubResource("ViewportTexture_fc0e3")
