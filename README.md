@@ -13,8 +13,14 @@ Screenshot 1: Playing and testing the project:
 
 ========================================================================================================================================================================================
 Week 2: Activity 2
-Screenshot 1:
+Screenshot 1 & 2:
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/7a3971a9-92ac-4e0e-94d5-5fc686306cd4" />
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/961c1d09-aa53-425b-a09b-fd3303587b66" />
+
+
 
 ========================================================================================================================================================================================
 Week 3: Activity 1
 Screenshot 1:
+<img width="1912" height="1198" alt="image" src="https://github.com/user-attachments/assets/ae1500aa-8a73-4097-8239-b655434d0ab0" />
+
