@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://buktuid4f3du4" path="res://game.gd" id="1_e2o6t"]
 [ext_resource type="Script" uid="uid://bf76mbn6idv4t" path="res://player.gd" id="2_e2o6t"]
-[ext_resource type="Texture2D" uid="uid://48w13dwlj5ul" path="res://enemypng.png" id="3_7jktm"]
 [ext_resource type="AudioStream" uid="uid://1eq3iks70nss" path="res://jumpsoundeffect.mp3" id="3_feb5d"]
 [ext_resource type="AudioStream" uid="uid://dgukhdcrprx3a" path="res://walkingsound.mp3" id="4_fc0e3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
-size = Vector2(92, 89)
+[sub_resource type="CircleShape2D" id="CircleShape2D_80nbo"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fc0e3"]
 
@@ -18,13 +16,10 @@ script = ExtResource("1_e2o6t")
 script = ExtResource("2_e2o6t")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1246368571]
-position = Vector2(111, 99)
-scale = Vector2(0.09291665, 0.08458342)
-texture = ExtResource("3_7jktm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1958693647]
-position = Vector2(111, 94.5)
-shape = SubResource("RectangleShape2D_ryrav")
+position = Vector2(351, 276)
+shape = SubResource("CircleShape2D_80nbo")
 
 [node name="JumpSFX" type="AudioStreamPlayer2D" parent="Player" unique_id=1368563734]
 stream = ExtResource("3_feb5d")

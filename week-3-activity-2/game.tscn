@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bjv238jn0ocot"]
+
+[ext_resource type="Script" uid="uid://djog5nvmeircu" path="res://player.gd" id="1_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://bfxmharagrfig" path="res://player.png" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://b885jr8ww06y4" path="res://enemy.tscn" id="3_feb5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
+size = Vector2(85, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
+size = Vector2(1070, 125)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_feb5d"]
+vertices = PackedVector2Array(1113.8516, 304.96094, 53.273438, 301.03125, 56.4375, 181.84375, 362.07813, 173, 701.89844, 180, 1112.1406, 180)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(0, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-3, 8, 47, 161, 43, 311, 1124, 315, 1122, 170, 956, 170, 702, 170, 362, 163, 51, 172)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
+size = Vector2(67, 69)
+
+[node name="Game" type="Node2D" unique_id=1927969373 groups=["Player"]]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=694803230 groups=["Player"]]
+script = ExtResource("1_e2o6t")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1315860819]
+position = Vector2(97.18747, 126.06256)
+scale = Vector2(0.02944107, 0.028093481)
+texture = ExtResource("2_feb5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=840255667]
+position = Vector2(99.5, 128.5)
+shape = SubResource("RectangleShape2D_fc0e3")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1024094476]
+position = Vector2(14, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=1710194325]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=233215519]
+position = Vector2(566, 235.5)
+shape = SubResource("RectangleShape2D_e2o6t")
+debug_color = Color(0.2733146, 0.6326431, 3.85046e-07, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="Ground" unique_id=502988767]
+offset_left = 27.0
+offset_top = 178.0
+offset_right = 1107.0
+offset_bottom = 304.0
+color = Color(0.047749326, 0.16564655, 0.011159344, 1)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1628178298]
+navigation_polygon = SubResource("NavigationPolygon_feb5d")
+
+[node name="Enemy" parent="." unique_id=186109351 instance=ExtResource("3_feb5d")]
+position = Vector2(133, 46)
+
+[node name="Area2D" type="Area2D" parent="Enemy" unique_id=759027636]
+position = Vector2(66, 52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D" unique_id=1895894425]
+position = Vector2(26, 15)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[connection signal="body_entered" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Enemy/Area2D" to="Enemy" method="_on_area_2d_body_exited"]

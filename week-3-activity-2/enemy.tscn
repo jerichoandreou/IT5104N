@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b885jr8ww06y4"]
+
+[ext_resource type="Script" uid="uid://dw2xkkqsva72f" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://b1ya8lyq8xp4g" path="res://enemypng.png" id="1_7k104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(67, 67)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=186109351]
+script = ExtResource("1_4gyqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1697124842]
+position = Vector2(362, 88.99999)
+scale = Vector2(0.06041667, 0.06791666)
+texture = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1643933247]
+position = Vector2(357, 91)
+shape = SubResource("RectangleShape2D_4gyqm")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=754721344]
+
+[node name="PatrolPoint1" type="Marker2D" parent="." unique_id=1549041152]
+position = Vector2(60, 121)
+
+[node name="PatrolPoint2" type="Marker2D" parent="." unique_id=2060844194]
+position = Vector2(413, 114)
